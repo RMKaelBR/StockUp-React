@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/StockUp-React/static/css/main.977e2613.css",
+    "main.js": "/StockUp-React/static/js/main.b8695a84.js",
+    "static/js/787.28cb0dcd.chunk.js": "/StockUp-React/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/StockUp-React/index.html",
+    "main.977e2613.css.map": "/StockUp-React/static/css/main.977e2613.css.map",
+    "main.b8695a84.js.map": "/StockUp-React/static/js/main.b8695a84.js.map",
+    "787.28cb0dcd.chunk.js.map": "/StockUp-React/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.977e2613.css",
+    "static/js/main.b8695a84.js"
+  ]
+}
