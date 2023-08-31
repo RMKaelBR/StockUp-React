@@ -41,18 +41,19 @@
   }
 }
 
-nav > ul > li:hover {
-  color:yellow;
-}
-
-
 nav {
   background-color: midnightblue;
   height: 3em;
+  user-select: none;
 }
+
 nav > ul > li {
   color: goldenrod;
   display: inline;
   margin: 1em;
   font-size: x-large;
+}
+
+nav > ul > li:hover {
+  color:yellow;
 }
