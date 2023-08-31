@@ -1,0 +1,20 @@
+.Navigation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
+
+.ButtonsDiv {
+  align-self: center;
+}
+
+.Navigation > span {
+  align-self: center;
+  text-align: center;
+}
+
+.ButtonsDiv > button {
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}

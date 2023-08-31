@@ -1,25 +1,24 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import StocksIndexPage from './components/StocksIndexPage';
+import LoginPage from './components/auth/LoginPage';
+import SignupPage from './components/auth/SignupPage';
+import WelcomePage from './components/WelcomePage';
 import './App.css';
-import StocksIndex from './components/StocksIndex'
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 
-function App() {
-  // const [stocks, setStocks] = useState([]);
 
-  // useEffect(() => {
-  //   // Fetch data from Stockup API
-  //   axios.get("https://stock-up-api.onrender.com//stocks")
-  //     .then(response => {
-  //       setStocks(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error fetching data:', error);
-  //     });
-  // }, []);
-
+function App() {    
   return (
-    <StocksIndex />
+    <Router>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/login" element={<LoginPage /> } />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/stocks" element={<StocksIndexPage />} />
+      </Routes>
+    </Router>
   );
 }
 

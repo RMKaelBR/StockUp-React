@@ -31,6 +31,7 @@
 .App > ul {
   list-style-type: none;
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,4 +39,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+nav > ul > li:hover {
+  color:yellow;
+}
+
+
+nav {
+  background-color: midnightblue;
+  height: 3em;
+}
+nav > ul > li {
+  color: goldenrod;
+  display: inline;
+  margin: 1em;
+  font-size: x-large;
 }
