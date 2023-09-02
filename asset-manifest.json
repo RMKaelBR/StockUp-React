@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/StockUp-React/static/css/main.977e2613.css",
-    "main.js": "/StockUp-React/static/js/main.b8695a84.js",
+    "main.css": "/StockUp-React/static/css/main.59a2bad9.css",
+    "main.js": "/StockUp-React/static/js/main.a09a3150.js",
     "static/js/787.28cb0dcd.chunk.js": "/StockUp-React/static/js/787.28cb0dcd.chunk.js",
+    "static/media/stockup.png": "/StockUp-React/static/media/stockup.4e19b492e91072db1d32.png",
     "index.html": "/StockUp-React/index.html",
-    "main.977e2613.css.map": "/StockUp-React/static/css/main.977e2613.css.map",
-    "main.b8695a84.js.map": "/StockUp-React/static/js/main.b8695a84.js.map",
+    "main.59a2bad9.css.map": "/StockUp-React/static/css/main.59a2bad9.css.map",
+    "main.a09a3150.js.map": "/StockUp-React/static/js/main.a09a3150.js.map",
     "787.28cb0dcd.chunk.js.map": "/StockUp-React/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.977e2613.css",
-    "static/js/main.b8695a84.js"
+    "static/css/main.59a2bad9.css",
+    "static/js/main.a09a3150.js"
   ]
 }
