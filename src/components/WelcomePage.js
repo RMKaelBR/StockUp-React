@@ -8,11 +8,11 @@ function Navigation() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('/login');
+    navigate('/StockUp-React/login');
   }
 
   const handleSignupClick = () => {
-    navigate('/signup')
+    navigate('/StockUp-React/signup')
   }
 
   return (
