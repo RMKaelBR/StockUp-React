@@ -1,22 +1,33 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navigation from './Navigation'
 
-const StocksIndex = () => {
+const StocksIndexPage = () => {
+  console.log("StocksIndexPage rendered")
+
   const [stocks, setStocks] = useState([]);
 
   useEffect(() => {
     // Fetch data from Stockup API
-    axios.get("https://stock-up-api.onrender.com//stocks")
+    axios.get("http://localhost:3000/stocks")
       .then(response => {
         setStocks(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
+        axios.get("https://stock-up-api.onrender.com//stocks")
+          .then(response => {
+            setStocks(response.data);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
       });
   }, []);
 
   return (
-    <div className="App">
+    <div>
+      <Navigation />
       <h1>Stocks</h1>
       <ul>
         {stocks.map(stock => (
@@ -27,4 +38,4 @@ const StocksIndex = () => {
   );
 }
 
-export default StocksIndex
+export default StocksIndexPage

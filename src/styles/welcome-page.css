@@ -1,0 +1,30 @@
+.Navigation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  user-select: none;
+}
+
+.ButtonsDiv {
+  align-self: center;
+}
+
+.Navigation > span {
+  align-self: center;
+  text-align: center;
+}
+
+.ButtonsDiv > button {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Logo {
+  align-self: center;
+  user-select: none;
+  /* flex: none; */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
