@@ -7,6 +7,7 @@ function Navigation() {
       <ul>
         <li><NavLink to="/StockUp-React/home">Home</NavLink></li>
         <li><NavLink to="/StockUp-React/stocks">Stocks</NavLink></li>
+        <li><NavLink to="/StockUp-React/">Sign-out</NavLink></li>
       </ul>
     </nav>
   )
