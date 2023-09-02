@@ -15,7 +15,7 @@ const StocksIndexPage = () => {
       })
       .catch(error => {
         console.error('Error fetching data:', error);
-        axios.get("https://stock-up-api.onrender.com//stocks")
+        axios.get("https://stock-up-api.onrender.com/stocks")
           .then(response => {
             setStocks(response.data);
           })
@@ -31,7 +31,7 @@ const StocksIndexPage = () => {
       <h1>Stocks</h1>
       <ul>
         {stocks.map(stock => (
-          <li key={stock.symbol}>{stock.symbol} - {stock.price.amount} </li>
+          <li key={stock.symbol}>{stock.name} - {stock.symbol} - {stock.price.amount} </li>
         ))}
       </ul>
     </div>
