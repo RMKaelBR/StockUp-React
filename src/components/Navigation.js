@@ -5,8 +5,8 @@ function Navigation() {
   return (
     <nav>
       <ul>
-        <li><NavLink to="/home">Home</NavLink></li>
-        <li><NavLink to="/stocks">Stocks</NavLink></li>
+        <li><NavLink to="/StockUp-React/home">Home</NavLink></li>
+        <li><NavLink to="/StockUp-React/stocks">Stocks</NavLink></li>
       </ul>
     </nav>
   )
