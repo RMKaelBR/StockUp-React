@@ -7,8 +7,8 @@ function SignupPage() {
     <div>
       <nav>
         <ul>
-          <li><NavLink to="/">Back</NavLink></li>
-          <li><NavLink to="/login">Log-in instead</NavLink></li>
+          <li><NavLink to="/StockUp-React">Back</NavLink></li>
+          <li><NavLink to="/StockUp-React/login">Log-in instead</NavLink></li>
         </ul>
       </nav>
       <h1>Signup Page</h1>

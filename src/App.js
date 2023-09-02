@@ -12,11 +12,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<WelcomePage />} />
-        <Route path="/login" element={<LoginPage /> } />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/stocks" element={<StocksIndexPage />} />
+        <Route root index path="/StockUp-React" element={<WelcomePage />} />
+        <Route path="/StockUp-React/login" element={<LoginPage /> } />
+        <Route path="/StockUp-React/signup" element={<SignupPage />} />
+        <Route path="/StockUp-React/home" element={<HomePage />} />
+        <Route path="/StockUp-React/stocks" element={<StocksIndexPage />} />
       </Routes>
     </Router>
   );
