@@ -5,6 +5,7 @@ import StocksIndexPage from './components/StocksIndexPage';
 import LoginPage from './components/auth/LoginPage';
 import SignupPage from './components/auth/SignupPage';
 import WelcomePage from './components/WelcomePage';
+import StockPage from './components/StockPage';
 import './App.css';
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/StockUp-React/signup" element={<SignupPage />} />
         <Route path="/StockUp-React/home" element={<HomePage />} />
         <Route path="/StockUp-React/stocks" element={<StocksIndexPage />} />
+        <Route path="/StockUp-React/stocks/:symbol" element={<StockPage />} />
       </Routes>
     </Router>
   );
