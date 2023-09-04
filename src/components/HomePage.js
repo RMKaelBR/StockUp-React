@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div>
       <Navigation />
-      <h1 className="text-3xl">Welcome to the Homepage</h1>
+      <h1 className="text-3xl font-bold underline">Welcome to the Homepage</h1>
     </div>
   );
 }
