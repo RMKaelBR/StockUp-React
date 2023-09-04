@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Navigation from './Navigation'
+import Navigation from './Navigation';
 
 const StocksIndexPage = () => {
   console.log("StocksIndexPage rendered")
@@ -28,10 +29,12 @@ const StocksIndexPage = () => {
   return (
     <div>
       <Navigation />
-      <h1>Stocks</h1>
+      <h1 className="text-3xl">Stocks</h1>
       <ul>
         {stocks.map(stock => (
-          <li key={stock.symbol}>{stock.name} - {stock.symbol} - {stock.price.amount} </li>
+          <li key={stock.symbol}>
+            <Link className="stockLink" to={`/StockUp-React/stocks/${stock.symbol}`}> {stock.name}</Link> - {stock.symbol} - {stock.price.amount}
+          </li>
         ))}
       </ul>
     </div>
