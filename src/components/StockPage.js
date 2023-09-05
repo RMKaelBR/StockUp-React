@@ -14,17 +14,17 @@ function StockPage() {
     axios.get(`https://stock-up-api.onrender.com/stocks/${symbol}`)
       .then(response => {
         setStock(response.data);
-        console.log('Data received from localhost API.')
+        console.log('Data received from web-hosted API.')
       })
       .catch(error => {
-        console.error('Error fetching data from localhost API:', error);
+        console.error('Error fetching data from web-hosted API:', error);
         axios.get(`http://localhost:3000/stocks/${symbol}`)
           .then(response => {
             setStock(response.data);
-            console.log('Data received from web-hosted API.')
+            console.log('Data received from locally-hosted API.')
           })
           .catch(error => {
-            console.error('Error fetching data from hosted API:', error);
+            console.error('Error fetching data from locally-hosted API:', error);
           });
       });
   }, [symbol]);

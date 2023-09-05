@@ -11,20 +11,20 @@ const StocksIndexPage = () => {
 
   useEffect(() => {
     // Fetch data from Stockup API
-    axios.get("https://stock-up-api.onrender.com/stockshttp://localhost:3000/stocks")
+    axios.get("https://stock-up-api.onrender.com/stocks")
       .then(response => {
         setStocks(response.data);
-        console.log('Data received from localhost API.')
+        console.log('Data received from web-hosted API.')
       })
       .catch(error => {
-        console.error('Error fetching data from hosted API:', error);
+        console.error('Error fetching data from web-hosted API:', error);
         axios.get("http://localhost:3000/stocks")
           .then(response => {
             setStocks(response.data);
-            console.log('Data received from web-hosted API.')
+            console.log('Data received from locally-hosted API.')
           })
           .catch(error => {
-            console.error('Error fetching data from localhost API:', error);
+            console.error('Error fetching data from locally-hosted API:', error);
           });
       });
   }, []);
