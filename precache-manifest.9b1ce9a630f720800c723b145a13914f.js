@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "9a6661df9666bebf3d99",
+    "revision": "fbb5130d7b79aef7688b",
     "url": "/StockUp-React/static/css/main.80937121.chunk.css"
   },
   {
-    "revision": "9a6661df9666bebf3d99",
-    "url": "/StockUp-React/static/js/main.d87a29d6.chunk.js"
+    "revision": "fbb5130d7b79aef7688b",
+    "url": "/StockUp-React/static/js/main.4ccfccbd.chunk.js"
   },
   {
     "revision": "c13d91b61935ee030f0c",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/StockUp-React/static/media/stockup.7ed6b86a.png"
   },
   {
-    "revision": "01d1da1ff6f13533d0cb9be0e015dae4",
+    "revision": "f1a2843645738076fea07e604bc3cc06",
     "url": "/StockUp-React/index.html"
   }
 ];
