@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import SignupForm from './forms/SignupForm';
+
 
 
 function SignupPage() {
@@ -11,7 +13,12 @@ function SignupPage() {
           <li><NavLink to="/StockUp-React/login">Log-in instead</NavLink></li>
         </ul>
       </nav>
-      <h1>Signup Page</h1>
+      <div className="authBody">
+        <h1 className="text-3xl font-bold">Signup Page</h1>
+        <br/>
+        <SignupForm />
+      </div>
+      
     </div>
     
   );
