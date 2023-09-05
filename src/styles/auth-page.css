@@ -1,0 +1,15 @@
+.authBody {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formBody {
+  text-align: center;
+}
+.inputContainer > input {
+  border: 1px solid gray;
+  margin: 2px;
+}
+
