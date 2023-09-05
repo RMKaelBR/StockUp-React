@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import appLogo from "../assets/stockup.png";
-import '../styles/welcome-page.css'
+import '../styles/welcome-page.css';
 
 
 function Navigation() {
