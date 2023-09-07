@@ -67,4 +67,9 @@ nav > ul > li:hover {
   position: fixed;
   right: 10px;
   top: 10px;
+  user-select: none;
+}
+
+.consoleClearer:hover {
+  background-color: gray;
 }

@@ -14,16 +14,15 @@ function LoginForm() {
 
   const handleLoginClick = (event) => {
     event.preventDefault();
-    console.clear();
     const userData = {
       email: email,
       password: password,
     };
-    console.log("Button, clicked.")
 
     axios
       .post('https://stock-up-api.onrender.com/sign_in', userData)
       .then((response) => {
+        console.log('Authentication from web-hosted API successful, rendering HomePage...')
         navigate('/StockUp-React/home')
       })
       .catch((error) => {
@@ -31,6 +30,7 @@ function LoginForm() {
         axios
           .post('http://localhost:3000/sign_in', userData)
           .then((response) => {
+            console.log('Authentication from locally-hosted API successful, rendering HomePage...')
             navigate('/StockUp-React/home')
           })
           .catch((error) => {

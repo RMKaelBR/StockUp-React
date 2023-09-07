@@ -6,8 +6,10 @@ import LoginPage from './components/auth/LoginPage';
 import SignupPage from './components/auth/SignupPage';
 import WelcomePage from './components/WelcomePage';
 import StockPage from './components/StockPage';
-import ConsoleClearer from './components/ConsoleClearer'
+import withAuth from './utils/withAuth';
 import './App.css';
+
+import ConsoleClearer from './components/ConsoleClearer';
 
 
 function App() {    
@@ -19,9 +21,10 @@ function App() {
           <Route root index path="/StockUp-React" element={<WelcomePage />} />
           <Route path="/StockUp-React/login" element={<LoginPage /> } />
           <Route path="/StockUp-React/signup" element={<SignupPage />} />
-          <Route path="/StockUp-React/home" element={<HomePage />} />
-          <Route path="/StockUp-React/stocks" element={<StocksIndexPage />} />
-          <Route path="/StockUp-React/stocks/:symbol" element={<StockPage />} />
+          {/* <Route path="/StockUp-React/home" element={<HomePage />} /> */}
+          <Route path="/StockUp-React/home" element={withAuth(HomePage)} />
+          <Route path="/StockUp-React/stocks" element={withAuth(StocksIndexPage)} />
+          <Route path="/StockUp-React/stocks/:symbol" element={withAuth(StockPage)} />
         </Routes>
       </Router>
     </div>
