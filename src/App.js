@@ -21,7 +21,6 @@ function App() {
           <Route root index path="/StockUp-React" element={<WelcomePage />} />
           <Route path="/StockUp-React/login" element={<LoginPage /> } />
           <Route path="/StockUp-React/signup" element={<SignupPage />} />
-          {/* <Route path="/StockUp-React/home" element={<HomePage />} /> */}
           <Route path="/StockUp-React/home" element={withAuth(HomePage)} />
           <Route path="/StockUp-React/stocks" element={withAuth(StocksIndexPage)} />
           <Route path="/StockUp-React/stocks/:symbol" element={withAuth(StockPage)} />

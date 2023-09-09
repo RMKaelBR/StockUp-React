@@ -6,25 +6,25 @@ function Navigation() {
   const navigate = useNavigate();
 
   const handleSignout = () => {
+    // axios
+    //   .delete('https://stock-up-api.onrender.com/logout')
+    //   .then((response) => {
+    //     console.log('User session on web-hosted API ended, rendering Login...')
+    //     navigate('/StockUp-React/login')
+    //   })
+    //   .catch((error) => {
+    //     console.error('User session deletion on web-hosted API failed:', error)
+    // })
     axios
-      .delete('https://stock-up-api.onrender.com/logout')
+      .delete('http://localhost:3000/logout')
       .then((response) => {
-        console.log('User session on web-hosted API ended, rendering Login...')
+        console.log('User session on locally-hosted API ended, rendering Login...')
         navigate('/StockUp-React/login')
       })
       .catch((error) => {
-        console.error('User session deletion on web-hosted API failed:', error)
-        axios
-          .delete('http://localhost:3000/logout')
-          .then((response) => {
-            console.log('User session on locally-hosted API ended, rendering Login...')
-            navigate('/StockUp-React/login')
-          })
-          .catch((error) => {
-            console.error('User session deletion on locally-hosted API failed:', error)
-            console.log('Redirecting to login page anyway...')
-            navigate('/StockUp-React/login')
-          })
+        console.error('User session deletion on locally-hosted API failed:', error)
+        console.log('Redirecting to login page anyway...')
+        navigate('/StockUp-React/login')
       })
   }
 

@@ -1,20 +1,26 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { authenticateUser } from './auth';
 
 const withAuth = (WrappedComponent) => {
   const AuthComponent = (props) => {
     const navigate = useNavigate();
-    const isAuthenticated = true;
 
     useEffect(() => {
-      if (!isAuthenticated) {
-        console.log("User not authenticated. Redirecting to loginpage")
+      const checkAuthentication = async() => {
+        const userData = true//await authenticateUser();
+      
+      if (!userData) {
+        console.log("User not authenticated. Redirecting to loginpage...")
         navigate('/StockUp-React/login');
       }
-    }, [isAuthenticated, navigate]);
+    };
+
+      checkAuthentication();
+    }, [navigate]);
     
 
-    return isAuthenticated ? <WrappedComponent {...props} /> : null;
+    return <WrappedComponent {...props} />;
   };
 
   return <AuthComponent />;

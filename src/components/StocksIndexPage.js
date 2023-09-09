@@ -8,38 +8,57 @@ const StocksIndexPage = () => {
   console.log("StocksIndexPage rendered")
 
   const [stocks, setStocks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   // Fetch data from Stockup API
+  //   axios.get("https://stock-up-api.onrender.com/stocks")
+  //     .then(response => {
+  //       setStocks(response.data);
+  //       console.log('Data received from web-hosted API.')
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data from web-hosted API:', error);
+  //       axios.get("http://localhost:3000/stocks")
+  //         .then(response => {
+  //           setStocks(response.data);
+  //           console.log('Data received from locally-hosted API.')
+  //         })
+  //         .catch(error => {
+  //           console.error('Error fetching data from locally-hosted API:', error);
+  //         });
+  //     });
+  // }, []);
 
   useEffect(() => {
-    // Fetch data from Stockup API
-    axios.get("https://stock-up-api.onrender.com/stocks")
+    axios.get("http://localhost:3000/stocks")
       .then(response => {
         setStocks(response.data);
-        console.log('Data received from web-hosted API.')
+        console.log('Data received from locally-hosted API.');
+        setLoading(false);
       })
       .catch(error => {
-        console.error('Error fetching data from web-hosted API:', error);
-        axios.get("http://localhost:3000/stocks")
-          .then(response => {
-            setStocks(response.data);
-            console.log('Data received from locally-hosted API.')
-          })
-          .catch(error => {
-            console.error('Error fetching data from locally-hosted API:', error);
-          });
+        console.error('Error fetching data from locally-hosted API:', error);
+        setLoading(false);
       });
   }, []);
 
+  console.log(`The response: ${stocks}`)
   return (
     <div>
       <Navigation />
       <h1 className="text-3xl">Stocks</h1>
-      <ul>
-        {stocks.map(stock => (
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+        {Array.isArray(stocks) && stocks.map(stock => (
           <li key={stock.symbol}>
             <Link className="stockLink" to={`/StockUp-React/stocks/${stock.symbol}`}> {stock.name}</Link> - {stock.symbol} - {stock.price.amount}
           </li>
         ))}
       </ul>
+      )}
     </div>
   );
 }
