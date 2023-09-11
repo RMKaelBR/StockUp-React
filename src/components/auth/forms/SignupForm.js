@@ -8,7 +8,8 @@ function SignupForm() {
     useState({ email: '', 
               username: '', 
               password: '' , 
-              password_confirmation: ''})
+              password_confirmation: '',
+              admin: false})
     );
 
   const handleSignupSubmit = async(e) => {
@@ -46,43 +47,50 @@ function SignupForm() {
     <div className="formBody">
       <form className="loginForm" onSubmit={handleSignupSubmit}>
         <div className="inputContainer">
-        <input
-          type="email"
-          placeholder="Email"
-          value={credentials.email}
-          name="email"
-          autoComplete='off'
-          onChange={(e) => setCredentials({ ...credentials, email: e.target.value})}
-        />
-        <br/>
-        <input
-          type="text"
-          placeholder="Username"
-          value={credentials.username}
-          name="username"
-          autoComplete='off'
-          onChange={(e) => setCredentials({ ...credentials, username: e.target.value})}
-        />
-        <br/>
-        <input
-          type="password"
-          placeholder="Password"
-          value={credentials.password}
-          name="password"
-          autoComplete='off'
-          onChange={(e) => setCredentials({ ...credentials, password: e.target.value})}
-        />
-        <br/>
-        <input
-          type="password"
-          placeholder="Password Confirmation"
-          value={credentials.password_confirmation}
-          name="password_confirmation"
-          autoComplete='off'
-          onChange={(e) => setCredentials({ ...credentials, password_confirmation: e.target.value})}
-        />
-        <br/>
-          
+          <input
+            type="email"
+            placeholder="Email"
+            value={credentials.email}
+            name="email"
+            autoComplete='off'
+            onChange={(e) => setCredentials({ ...credentials, email: e.target.value})}
+          />
+          <br/>
+          <input
+            type="text"
+            placeholder="Username"
+            value={credentials.username}
+            name="username"
+            autoComplete='off'
+            onChange={(e) => setCredentials({ ...credentials, username: e.target.value})}
+          />
+          <br/>
+          <input
+            type="password"
+            placeholder="Password"
+            value={credentials.password}
+            name="password"
+            autoComplete='off'
+            onChange={(e) => setCredentials({ ...credentials, password: e.target.value})}
+          />
+          <br/>
+          <input
+            type="password"
+            placeholder="Password Confirmation"
+            value={credentials.password_confirmation}
+            name="password_confirmation"
+            autoComplete='off'
+            onChange={(e) => setCredentials({ ...credentials, password_confirmation: e.target.value})}
+          />
+          <br/>
+          <input
+            type="checkbox"
+            name="admin"
+            id="admin"
+            checked={credentials.admin}
+            onChange={(e) => setCredentials({ ...credentials, admin: e.target.checked})}
+          />
+          <label htmlFor="admin">Admin</label>
         </div>
         <button
           type="submit"
