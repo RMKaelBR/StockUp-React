@@ -4,7 +4,7 @@ import appLogo from "../assets/stockup.png";
 import '../styles/welcome-page.css';
 
 
-function Navigation() {
+function WelcomePage() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
@@ -33,9 +33,8 @@ function Navigation() {
           Sign Up
         </button>
       </div>
-      
     </div>
   )
 };
 
-export default Navigation
+export default WelcomePage
