@@ -1,7 +1,7 @@
 {
   "main.css": "/StockUp-React/static/css/main.7dcc8477.chunk.css",
-  "main.js": "/StockUp-React/static/js/main.5c59592f.chunk.js",
-  "main.js.map": "/StockUp-React/static/js/main.5c59592f.chunk.js.map",
+  "main.js": "/StockUp-React/static/js/main.502caa54.chunk.js",
+  "main.js.map": "/StockUp-React/static/js/main.502caa54.chunk.js.map",
   "runtime~main.js": "/StockUp-React/static/js/runtime~main.b1dc60f7.js",
   "runtime~main.js.map": "/StockUp-React/static/js/runtime~main.b1dc60f7.js.map",
   "static/js/2.8b79d66e.chunk.js": "/StockUp-React/static/js/2.8b79d66e.chunk.js",
@@ -9,7 +9,7 @@
   "static/js/3.27fea2aa.chunk.js": "/StockUp-React/static/js/3.27fea2aa.chunk.js",
   "static/js/3.27fea2aa.chunk.js.map": "/StockUp-React/static/js/3.27fea2aa.chunk.js.map",
   "index.html": "/StockUp-React/index.html",
-  "precache-manifest.ceb3ec4232cafec2bef732225c12876e.js": "/StockUp-React/precache-manifest.ceb3ec4232cafec2bef732225c12876e.js",
+  "precache-manifest.5b62d03688b9652431de87b1baffcf76.js": "/StockUp-React/precache-manifest.5b62d03688b9652431de87b1baffcf76.js",
   "service-worker.js": "/StockUp-React/service-worker.js",
   "static/css/main.7dcc8477.chunk.css.map": "/StockUp-React/static/css/main.7dcc8477.chunk.css.map",
   "static/media/stockup.png": "/StockUp-React/static/media/stockup.7ed6b86a.png"
