@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import SignupForm from './forms/SignupForm';
 
 
-
 function SignupPage() {
   return (
     <div>

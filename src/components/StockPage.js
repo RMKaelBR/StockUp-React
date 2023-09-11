@@ -6,35 +6,10 @@ import Navigation from './Navigation'
 
 function StockPage() {
   const { symbol } = useParams();
-
   const [stock, setStock] = useState([]);
   const [loading, setLoading] = useState([])
-  // useEffect(() => {
-  //   // Fetch data from Stockup API
-  //   axios.get(`https://stock-up-api.onrender.com/stocks/${symbol}`)
-  //     .then(response => {
-  //       setStock(response.data);
-  //       console.log('Data received from web-hosted API.');
-  //       setLoading(false);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error fetching data from web-hosted API:', error);
-  //       setLoading(false);
-  //       axios.get(`http://localhost:3000/stocks/${symbol}`)
-  //         .then(response => {
-  //           setStock(response.data);
-  //           console.log('Data received from locally-hosted API.')
-  //           setLoading(false);
-  //         })
-  //         .catch(error => {
-  //           console.error('Error fetching data from locally-hosted API:', error);
-  //           setLoading(false);
-  //         });
-  //     });
-  // }, [symbol]);
   
   useEffect(() => {
-    // Fetch data from Stockup local API
     axios.get(`https://stock-up-api.onrender.com/stocks/${symbol}`)
       .then(response => {
         setStock(response.data);
@@ -56,7 +31,6 @@ function StockPage() {
       });
   }, [symbol]);
 
-  // console.log(stock)
   return (
     <div>
       <Navigation />

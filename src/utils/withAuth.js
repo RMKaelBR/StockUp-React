@@ -15,14 +15,10 @@ const withAuth = (WrappedComponent) => {
         navigate('/StockUp-React/login');
       }
     };
-
       checkAuthentication();
     }, [navigate]);
-    
-
     return <WrappedComponent {...props} />;
   };
-
   return <AuthComponent />;
 };
 
