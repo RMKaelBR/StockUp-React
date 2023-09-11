@@ -6,10 +6,6 @@ function LoginForm() {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: '', password: '' });
 
-  const handleSkipLoginClick = () => {
-    navigate('/StockUp-React/home');
-  }
-
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -19,8 +15,8 @@ function LoginForm() {
       });
       
       if (response) {
-        console.log(`In auth: ${response.data}`)
-        console.log(response.data.auth_token)
+        // console.log(`In auth: ${response.data}`)
+        // console.log(response.data.auth_token)
         localStorage.setItem('authToken', response.data.auth_token)
         navigate('/StockUp-React/home');;
       }
@@ -34,8 +30,8 @@ function LoginForm() {
         });
         
         if (response) {
-          console.log(`In auth: ${response.data}`)
-          console.log(response.data.auth_token)
+          // console.log(`In auth: ${response.data}`)
+          // console.log(response.data.auth_token)
           localStorage.setItem('authToken', response.data.auth_token)
           navigate('/StockUp-React/home');;
         }
@@ -44,9 +40,7 @@ function LoginForm() {
         console.error('Authentication error on local API:', error)
       }
     }
-  }
-
-    
+  } 
 
   return (
     <div className="formBody">
@@ -70,15 +64,10 @@ function LoginForm() {
             onChange={(e) => setCredentials({ ...credentials, password: e.target.value})}
           />
         </div>
-        <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
           Log in
         </button>
       </form>
-      <br/>
-      <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded shadow"
-              onClick={handleSkipLoginClick}>
-        Skip, lmao
-      </button>
     </div>
   )
 }
