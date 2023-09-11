@@ -16,9 +16,10 @@ function Navigation() {
     //     console.error('User session deletion on web-hosted API failed:', error)
     // })
     axios
-      .delete('http://localhost:3000/logout')
+      .delete('http://localhost:3000/sign_out')
       .then((response) => {
         console.log('User session on locally-hosted API ended, rendering Login...')
+        localStorage.removeItem("authToken")
         navigate('/StockUp-React/login')
       })
       .catch((error) => {

@@ -8,7 +8,8 @@ const withAuth = (WrappedComponent) => {
 
     useEffect(() => {
       const checkAuthentication = async() => {
-        const userData = true//await authenticateUser();
+        // const userData = true;
+        const userData = await authenticateUser();
       
       if (!userData) {
         console.log("User not authenticated. Redirecting to loginpage...")

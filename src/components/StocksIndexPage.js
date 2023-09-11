@@ -9,6 +9,7 @@ const StocksIndexPage = () => {
 
   const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
+  // const authToken = localStorage.getItem('authToken');
 
   // useEffect(() => {
   //   // Fetch data from Stockup API
@@ -43,7 +44,6 @@ const StocksIndexPage = () => {
       });
   }, []);
 
-  console.log(`The response: ${stocks}`)
   return (
     <div>
       <Navigation />

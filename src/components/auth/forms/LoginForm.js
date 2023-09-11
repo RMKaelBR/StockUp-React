@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { authenticateUser } from '../../../utils/auth'
+import axios from 'axios';
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -12,13 +12,22 @@ function LoginForm() {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    const userData = await authenticateUser(credentials);
-    console.log(`In LoginForm: ${userData}`)
-    if (userData) {
-      navigate('/StockUp-React/home');
-    }
-    else {
-      console.error('LoginForm Authentication failed.')
+    
+    try {
+      const response = await axios.post('http://localhost:3000/sign_in', {
+        email: credentials.email,
+        password: credentials.password,
+      });
+      
+      if (response) {
+        console.log(`In auth: ${response.data}`)
+        console.log(response.data.auth_token)
+        localStorage.setItem('authToken', response.data.auth_token)
+        navigate('/StockUp-React/home');;
+      }
+    } 
+    catch (error) {
+      console.error('Authentication error on local API:', error)
     }
   }
 
@@ -29,6 +38,8 @@ function LoginForm() {
           <input  
             type="email"
             placeholder="Email"
+            name="email"
+            autoComplete="on"
             value={credentials.email}
             onChange={(e) => setCredentials({ ...credentials, email: e.target.value})}
           />
@@ -36,6 +47,8 @@ function LoginForm() {
           <input
             type="password"
             placeholder="Password"
+            name="password"
+            autoComplete="on"
             value={credentials.password}
             onChange={(e) => setCredentials({ ...credentials, password: e.target.value})}
           />
