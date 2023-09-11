@@ -62,3 +62,14 @@ nav > ul > li:hover {
 .stockLink {
   color: blue;
 }
+
+.consoleClearer {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  user-select: none;
+}
+
+.consoleClearer:hover {
+  background-color: gray;
+}
