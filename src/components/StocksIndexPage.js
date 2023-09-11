@@ -32,15 +32,24 @@ const StocksIndexPage = () => {
   // }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/stocks")
+    axios.get("https://stock-up-api.onrender.com/stocks")
       .then(response => {
         setStocks(response.data);
-        console.log('Data received from locally-hosted API.');
+        console.log('Data received from web-hosted API.');
         setLoading(false);
       })
       .catch(error => {
-        console.error('Error fetching data from locally-hosted API:', error);
-        setLoading(false);
+        console.error('Error fetching data from web-hosted API:', error);
+        axios.get("http://localhost:3000/stocks")
+            .then(response => {
+              setStocks(response.data);
+              console.log('Data received from locally-hosted API.');
+              setLoading(false);
+            })
+            .catch(error => {
+              console.error('Error fetching data from locally-hosted API:', error);
+              setLoading(false);
+            });
       });
   }, []);
 

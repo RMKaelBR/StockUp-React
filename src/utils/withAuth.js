@@ -8,10 +8,9 @@ const withAuth = (WrappedComponent) => {
 
     useEffect(() => {
       const checkAuthentication = async() => {
-        // const userData = true;
-        const userData = await authenticateUser();
+        const isAuthenticated = await authenticateUser();
       
-      if (!userData) {
+      if (!isAuthenticated) {
         console.log("User not authenticated. Redirecting to loginpage...")
         navigate('/StockUp-React/login');
       }

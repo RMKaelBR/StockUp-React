@@ -12,9 +12,8 @@ function LoginForm() {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    
     try {
-      const response = await axios.post('http://localhost:3000/sign_in', {
+      const response = await axios.post('https://stock-up-api.onrender.com/sign_in', {
         email: credentials.email,
         password: credentials.password,
       });
@@ -27,9 +26,27 @@ function LoginForm() {
       }
     } 
     catch (error) {
-      console.error('Authentication error on local API:', error)
+      console.error('Authentication error on web-hosted API:', error)
+      try {
+        const response = await axios.post('http://localhost:3000/sign_in', {
+          email: credentials.email,
+          password: credentials.password,
+        });
+        
+        if (response) {
+          console.log(`In auth: ${response.data}`)
+          console.log(response.data.auth_token)
+          localStorage.setItem('authToken', response.data.auth_token)
+          navigate('/StockUp-React/home');;
+        }
+      } 
+      catch (error) {
+        console.error('Authentication error on local API:', error)
+      }
     }
   }
+
+    
 
   return (
     <div className="formBody">
